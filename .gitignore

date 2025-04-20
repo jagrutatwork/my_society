@@ -1,0 +1,9 @@
+# Ignore real DB credentials
+src/main/resources/application.properties
+
+# Ignore Maven build folder
+target/
+
+# Ignore IDE folders
+.idea/
+*.iml
