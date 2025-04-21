@@ -1,8 +1,8 @@
 package com.mysociety.service.interfaces;
 
-import com.mysociety.model.dto.AdminSignupRequest;
-import com.mysociety.model.dto.ResidentSignupRequest;
-import com.mysociety.model.dto.SecuritySignupRequest;
+import com.mysociety.model.dto.request.AdminSignupRequest;
+import com.mysociety.model.dto.request.ResidentSignupRequest;
+import com.mysociety.model.dto.request.SecuritySignupRequest;
 import com.mysociety.model.entity.User;
 
 public interface SignupService {

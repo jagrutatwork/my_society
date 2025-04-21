@@ -1,18 +1,20 @@
 package com.mysociety.model.entity;
+
 import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "societies")
+@Table(name = "society") // ✅ Corrected here!
 public class Society {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true) // ✅ Recommended
     private String name;
 
-    private String address; // ✅ Added address
+    private String address;
 
     @OneToMany(mappedBy = "society")
     private List<Wing> wings;
@@ -22,17 +24,17 @@ public class Society {
 		return "Society [id=" + id + ", name=" + name + ", address=" + address + ", wings=" + wings + "]";
 	}
 
+	public Society() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Society(Long id, String name, String address, List<Wing> wings) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.wings = wings;
-	}
-
-	public Society() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
@@ -66,4 +68,8 @@ public class Society {
 	public void setWings(List<Wing> wings) {
 		this.wings = wings;
 	}
+
+    // Constructors, Getters, Setters, toString()
+    
+    
 }

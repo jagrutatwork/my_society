@@ -7,7 +7,7 @@ import com.mysociety.model.entity.OwnerShipStatus;
 import com.mysociety.model.entity.Role;
 import com.mysociety.model.entity.Society;
 import com.mysociety.model.entity.User;
-
+     
 public class UserFactory {
 
     private UserFactory() {
@@ -51,7 +51,7 @@ public class UserFactory {
         user.setFlat(null); // Security guards have no flat
         user.setSociety(society);
         user.setRole(role);
-        user.setOwnershipStatus(OwnerShipStatus.PRIMARY_RESIDENT); // For security, irrelevant
+        user.setOwnershipStatus(OwnerShipStatus.NON_RESIDENT); 
         user.setMaintenancePaid(false);
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());
@@ -73,7 +73,7 @@ public class UserFactory {
         user.setFlat(null); // Admin is society-wide
         user.setSociety(society);
         user.setRole(role);
-        user.setOwnershipStatus(OwnerShipStatus.PRIMARY_RESIDENT); // Admins not tracked separately
+        user.setOwnershipStatus(OwnerShipStatus.NON_RESIDENT);
         user.setMaintenancePaid(false);
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());
