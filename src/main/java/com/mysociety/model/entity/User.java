@@ -43,6 +43,7 @@ public class User {
     private Role role;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "ownership_status")
     private OwnerShipStatus ownershipStatus = OwnerShipStatus.PRIMARY_RESIDENT;
 
     private boolean maintenancePaid = false;

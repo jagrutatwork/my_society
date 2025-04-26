@@ -70,7 +70,7 @@ public class SignupServiceImpl implements SignupService {
         ).orElseThrow(() -> new IllegalArgumentException("Flat not found with given details"));
 
         // 5. Fetch the Role: RESIDENT
-        Role residentRole = roleRepository.findByName("RESIDENT")
+        Role residentRole = roleRepository.findByName("ROLE_RESIDENT")
                 .orElseThrow(() -> new IllegalArgumentException("Resident role not found"));
 
         // 6. Encode the password
@@ -97,7 +97,7 @@ public class SignupServiceImpl implements SignupService {
         Society society = societyRepository.findById(request.getSocietyId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid society ID"));
 
-        Role securityRole = roleRepository.findByName("SECURITY_GUARD")
+        Role securityRole = roleRepository.findByName("ROLE_SECURITY_GUARD")
                 .orElseThrow(() -> new IllegalArgumentException("Security Guard role not found"));
 
         String encodedPassword = passwordEncoder.encode(request.getPassword());
@@ -119,7 +119,7 @@ public class SignupServiceImpl implements SignupService {
         Society society = societyRepository.findById(request.getSocietyId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid society ID"));
 
-        Role adminRole = roleRepository.findByName("ADMIN")
+        Role adminRole = roleRepository.findByName("ROLE_ADMIN")
                 .orElseThrow(() -> new IllegalArgumentException("Admin role not found"));
 
         String encodedPassword = passwordEncoder.encode(request.getPassword());
